@@ -1,0 +1,228 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sharon Bagadam — Full Stack Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome for footer icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Sharon Bagadam</div>
+    <nav class="main-nav" aria-label="Primary">
+      <button class="nav-btn" data-target="bio" aria-expanded="false">Bio</button>
+      <button class="nav-btn" data-target="resume" aria-expanded="false">Resume</button>
+      <button class="nav-btn" data-target="skills" aria-expanded="false">Skills</button>
+      <button class="nav-btn" data-target="certifications" aria-expanded="false">Certifications</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero reveal">
+      <div class="hero-top">
+        <img src="assets/profile.jpg" alt="Profile photo of Sharon Bagadam" class="profile-pic">
+        <div>
+          <h1>Hello — I'm Sharon Bagadam</h1>
+          <p class="subtitle">Full Stack Developer | Java | Python | Angular | AI Tools | Microservices</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tiles -->
+    <section class="tiles-section reveal" aria-label="Main tiles">
+      <div class="tiles">
+        <!-- BIO -->
+        <article class="tile" data-key="bio" tabindex="0" role="button" aria-pressed="false">
+          <div class="tile-visual">
+            <!-- small cartoon person badge -->
+            <svg class="tile-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect rx="12" width="64" height="64" fill="#E6F8FF"/>
+              <g transform="translate(8,8)">
+                <circle cx="24" cy="12" r="9" fill="#FFE9D6" />
+                <path d="M6 44c0-9.5 12-12 18-12s18 2.5 18 12" fill="#C9EAF9"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="tile-head">Bio</div>
+
+          <div class="tile-body">
+          <h3>Biography</h3>
+            <p>I am Sharon Bagadam, a passionate Full Stack Developer with strong expertise in both frontend and backend technologies.</p> 
+            <p>I have hands-on experience in building scalable applications using Java, Spring Boot, microservices, and RESTful APIs. On the frontend, I work with Angular, HTML5, CSS3, and JavaScript to create responsive and user-friendly interfaces. I also explore AI tools, databases, and a bit of Python to solve modern challenges and enhance application performance.</p> 
+            <p>My goal is to deliver clean, efficient, and innovative solutions while continuously learning new technologies.</p>
+          </div>
+        </article>
+
+        <!-- RESUME -->
+        <article class="tile" data-key="resume" tabindex="0" role="button" aria-pressed="false">
+          <div class="tile-visual">
+            <!-- small cartoon doc badge -->
+            <svg class="tile-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect rx="12" width="64" height="64" fill="#FFF8E6"/>
+              <g transform="translate(12,10)">
+                <rect x="4" y="4" width="36" height="44" rx="4" fill="#FFF" stroke="#FFD07A"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="tile-head">Resume</div>
+
+          <div class="tile-body">
+            <h3>Resume</h3>
+            <p><strong>Download / Open:</strong> <a class="resume-link" href="assets/resume.pdf" target="_blank" rel="noopener">Open Resume (PDF)</a></p>
+            <h4>Highlights</h4>
+            <ul>
+              <li><strong>Citi Group</strong> — Software Development Engineer (Sep 2023 – Present)</li>
+              <li><strong>Wipro</strong> — Software Development Engineer (Jan 2023 – Aug 2023)</li>
+              <li><strong>Kotak Bank</strong> — Senior Full Stack .NET Developer (Sep 2019 – Aug 2022)</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- SKILLS -->
+        <article class="tile" data-key="skills" tabindex="0" role="button" aria-pressed="false">
+          <div class="tile-visual">
+            <!-- CARTOON COMPUTER ICON -->
+            <svg class="tile-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect rx="12" width="64" height="64" fill="#EAFDF0"/>
+              <g transform="translate(8,12)">
+                <rect x="4" y="6" width="44" height="26" rx="3" fill="#FFFFFF" />
+                <rect x="8" y="10" width="36" height="4" rx="2" fill="#BCE8C9" />
+                <rect x="8" y="18" width="28" height="6" rx="3" fill="#CFF3D6" />
+                <rect x="2" y="34" width="52" height="6" rx="3" fill="#DFF7E7" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="tile-head">Skills</div>
+
+          <div class="tile-body">
+            <h3>Skills & Levels</h3>
+            <div class="skill-line"><strong>Java / Spring Boot / JavaScript / SQL</strong> <span class="level expert">Expert</span></div>
+            <div class="skill-line"><strong>Microservices / SpringBoot / Spring Cloud / EF Core / Kafka</strong> <span class="level advanced">Advanced</span></div>
+            <div class="skill-line"><strong>Angular / HTML5 / CSS3 / React.JS / Bootstrap / Frontend</strong> <span class="level advanced">Advanced</span></div>
+            <div class="skill-line"><strong>Databases (Postgres / MySQL / NoSQL / MongoDB)</strong> <span class="level advanced">Advanced</span></div>
+            <div class="skill-line"><strong>Python / AI tools</strong> <span class="level intermediate">Intermediate</span></div>
+            <div class="skill-line"><strong>DevOps / AWS (Lambda, S3, API Gateway, ECS) / Azure (Blob Storage, Data Factory, DevOps, AKS), </strong> <span class="level advanced">Advanced</span></div>
+          </div>
+        </article>
+
+        <!-- CERTIFICATIONS -->
+        <article class="tile" data-key="certifications" tabindex="0" role="button" aria-pressed="false">
+          <div class="tile-visual">
+            <!-- small cartoon badge -->
+            <svg class="tile-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect rx="12" width="64" height="64" fill="#F0F7FF"/>
+              <g transform="translate(12,10)">
+                <circle cx="20" cy="12" r="12" fill="#D7ECFF"/>
+                <path d="M8 36 L20 28 L32 36 L20 44 Z" fill="#C7E6FF"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="tile-head">Certifications</div>
+
+          <div class="tile-body certs-grid">
+            <div class="cert-item">
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/SharonBagadam-9938/A4F983CA4AB363E9?sharingId=70D603F5ADB7F5C7" target="_blank" rel="noopener">
+                <img src="assets/azure-developer.png" alt="Azure Developer badge" class="cert-badge">
+              </a>
+              <a class="cert-text" href="https://learn.microsoft.com/api/credentials/share/en-us/SharonBagadam-9938/A4F983CA4AB363E9?sharingId=70D603F5ADB7F5C7" target="_blank" rel="noopener">Azure Developer Associate (AZ-201) — Microsoft</a>
+            </div>
+
+            <div class="cert-item">
+              <a href="https://learn.microsoft.com/api/credentials/share/en-us/SharonBagadam-9938/E801FCE9CCADAD29?sharingId=70D603F5ADB7F5C7" target="_blank" rel="noopener">
+                <img src="assets/azure-ai.png" alt="Azure AI badge" class="cert-badge">
+              </a>
+              <a class="cert-text" href="https://learn.microsoft.com/api/credentials/share/en-us/SharonBagadam-9938/E801FCE9CCADAD29?sharingId=70D603F5ADB7F5C7" target="_blank" rel="noopener">Azure AI Engineer Associate (AI-201) — Microsoft</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience reveal">
+      <h2>Experience</h2>
+      <div class="exp-card"><h3>Citi Group — Software Development Engineer</h3><p class="exp-dates">Sep 2023 – Present</p>
+<ul>
+  <li>Designed and developed Spring Boot microservices for secure financial workflows, reducing transaction time by 30% and improving system reliability.</li>
+  <li>Built REST/GraphQL APIs and integrated Kafka, boosting real-time data processing capacity by 40%.</li>
+  <li>Optimized DB queries and added Redis caching, cutting API latency by 75% and doubling concurrent request handling.</li>
+</ul>
+      <p class="env"><strong>Environment:</strong> Java, Spring Boot, Kafka, PostgreSQL, Redis, AWS</p></div>
+      <div class="exp-card"><h3>Wipro — Software Development Engineer</h3><p class="exp-dates">Jan 2023 – Aug 2023</p>
+      <ul>
+  <li>Built modular Angular frontends and Spring Boot services, improving scalability and reducing feature delivery time by 25%.</li>
+  <li>Integrated messaging (Kafka, RabbitMQ) for event-driven tasks, enabling seamless data streaming and cutting processing delays by 40%.</li>
+  <li>Automated CI/CD pipelines and monitoring, accelerating deployments by 50% and reducing production issues through early detection.</li>
+</ul>
+      <p class="env"><strong>Environment:</strong> Angular, Spring Boot, Oracle, Docker</p></div>
+      <div class="exp-card"><h3>Kotak Bank — Senior Full Stack .NET Developer</h3><p class="exp-dates">Sep 2019 – Aug 2022</p>
+<ul>
+  <li>Implemented dashboards and backend services for transaction processing, increasing efficiency and reducing manual work.</li>
+  <li>Integrated Kafka and RabbitMQ for event-driven processing, improving throughput and minimizing delays.</li>
+  <li>Built monitoring and CI/CD automation, accelerating deployments and enhancing system reliability.</li>
+</ul>
+
+      <p class="env"><strong>Environment:</strong> React, Spring Boot, Kafka, Docker</p></div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects reveal">
+      <h2>Projects</h2>
+      <div class="proj-card"><h3>Banking Transaction API — Java & Spring Boot</h3>
+      <ul>
+  <li>Developed a secure microservice to handle financial transfers and event workflows.</li>
+  <li>Implemented Kafka for event streaming, message handling, and fraud detection pipelines.</li>
+  <li>Integrated JWT authentication with Role-Based Access Control (RBAC) for secure user management.</li>
+</ul>
+
+      <p class="env"><strong>Environment:</strong> Java, Spring Boot, PostgreSQL, Kafka, Docker</p></div>
+      <div class="proj-card"><h3>Healthcare Dashboard — Angular</h3>
+<ul>
+  <li>Developed interactive patient data visualizations with exportable charts for detailed insights.</li>
+  <li>Designed responsive interfaces optimized for both desktop and mobile platforms.</li>
+  <li>Implemented advanced filters and CSV export functionality for flexible data handling.</li>
+</ul>
+
+      <p class="env"><strong>Environment:</strong> Angular, TypeScript, Chart.js</p></div>
+    </section>
+
+    <!-- Education (replaced with your exact institutions, no years) -->
+    <section class="education reveal">
+      <h2>Education</h2>
+
+      <div class="edu-card">
+        <h3>Master of Science in Computer Science — Franklin University, Columbus, OH</h3>
+        <p>Learned advanced topics in distributed systems, cloud computing, and software architecture. Built projects focused on scalable backend services and cloud deployments.</p>
+      </div>
+
+      <div class="edu-card">
+        <h3>Bachelor Science in Computer Science — Aurora College, Hyderabad, India</h3>
+        <p>Built fundamentals in algorithms, data structures, databases and software engineering. Completed team projects that emphasized full-stack application development and problem-solving.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:davidsharon918@gmail.com">davidsharon918@gmail.com</a> |
+      <i class="fas fa-phone"></i>
+      <a href="tel:+16147387372">+1 (614) 738-7372</a>
+    </p>
+    <p>
+      <i class="fab fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/sharon4447" target="_blank" rel="noopener">linkedin.com/in/sharon4447</a>
+    </p>
+    <small>© <span id="year"></span> Sharon Bagadam — Built with HTML, CSS & JS</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

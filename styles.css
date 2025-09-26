@@ -1,0 +1,153 @@
+:root{
+  --bg: #0f1724;
+  --accent: #6EC6FF; /* sea pastel blue */
+  --muted: #9aa4b2;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  color:#e6eef6;
+  background:linear-gradient(180deg,var(--bg),#071023 60%);
+  font-size:16px;
+  line-height:1.45;
+  padding:18px;
+  scroll-behavior:smooth;
+}
+
+/* header */
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+.logo{font-weight:800;font-size:20px}
+.main-nav{display:flex;gap:10px}
+.nav-btn{background:transparent;border:1px solid transparent;color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer}
+.nav-btn:hover{color:var(--accent);transform:translateY(-3px)}
+
+/* container/hero */
+.container{max-width:1200px;margin:0 auto}
+.hero-top{display:flex;align-items:center;gap:18px;margin-bottom:18px}
+.profile-pic{width:110px;height:110px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);box-shadow:0 8px 26px rgba(0,0,0,0.5)}
+h1{margin:0 0 6px 0;font-size:34px}
+.subtitle{color:var(--muted);margin:0 0 10px 0}
+
+/* tiles grid - identical tile visuals */
+.tiles{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  align-items:start;
+  margin-bottom:18px;
+}
+/* ensure all tiles same visual area */
+.tile{
+  background:var(--glass);
+  border-radius:var(--radius);
+  padding:22px;
+  border:1px solid rgba(255,255,255,0.03);
+  min-height:220px;                /* uniform height */
+  max-height:220px;                /* prevent cert tile growing before expand */
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  cursor:pointer;
+  transition: transform 260ms cubic-bezier(.2,.9,.25,1), box-shadow 260ms ease, grid-column 260ms ease, max-height 260ms ease;
+  position:relative;
+  overflow:hidden;
+}
+.tile:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(0,0,0,0.55)}
+.tile:focus{outline:3px solid rgba(110,198,255,0.12)}
+
+/* VISUAL area: same size for all tiles */
+.tile-visual{height:96px;display:flex;align-items:center;justify-content:center}
+.tile-icon{width:96px;height:96px;border-radius:14px;object-fit:cover;border:3px solid rgba(110,198,255,0.12);transition: transform 300ms ease, box-shadow 300ms ease, opacity 260ms ease}
+
+/* header & body inside tile */
+.tile-head{font-weight:800;font-size:20px;color:#e6eef6}
+.tile-body{color:var(--muted);font-weight:400;display:none;line-height:1.5;opacity:0;transform:translateY(8px);transition:opacity 320ms ease, transform 320ms ease}
+.tile-body h3{margin:0 0 8px 0;color:var(--accent)}
+
+/* When expanded: allow growth, reveal body, hide visual & short head */
+.tile.expanded{
+  grid-column: 1 / -1;         /* span full width */
+  min-height:320px;
+  max-height:none;
+  transform:none;
+  box-shadow:0 28px 80px rgba(0,0,0,0.7);
+  padding:28px;
+}
+.tile.expanded .tile-body{
+  display:block;
+  opacity:1;
+  transform:none;
+}
+/* hide the small visual when expanded (so only content shows) */
+.tile.expanded .tile-visual{opacity:0;transform:scale(.98);pointer-events:none;visibility:hidden;height:0;margin:0;padding:0}
+/* hide the tile short label when expanded */
+.tile.expanded .tile-head{opacity:0;visibility:hidden;height:0;margin:0;padding:0}
+
+/* make icon slightly bigger while shrinking away */
+.tile.expanded .tile-icon{ transform: scale(1.08); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
+
+/* skill levels */
+.skill-line{margin:8px 0;display:flex;align-items:center;gap:12px}
+.level{padding:4px 8px;border-radius:8px;font-weight:700;font-size:12px}
+.level.expert{background:rgba(110,198,255,0.12);color:var(--accent)}
+.level.advanced{background:rgba(34,197,94,0.10);color:#7ee3b1}
+.level.intermediate{background:rgba(255,195,0,0.08);color:#ffd66a}
+
+/* certification list inside tile */
+.certs-grid{display:flex;flex-direction:column;gap:12px}
+.cert-item{display:flex;align-items:center;gap:12px}
+.cert-badge{width:84px;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.35)}
+.cert-text{color:#e6eef6;text-decoration:none;font-weight:700}
+
+/* experience & projects */
+.exp-card, .proj-card{
+  background:var(--glass);
+  border-radius:12px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,0.04);
+  margin-bottom:14px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.45);
+}
+.exp-card h3, .proj-card h3{margin:0;color:var(--accent)}
+.exp-dates{color:var(--muted);margin:6px 0}
+.env{color:var(--muted);font-size:13px}
+
+/* Education cards */
+.education{margin-top:24px}
+.edu-card{
+  background:var(--glass);
+  border-radius:12px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,0.05);
+  margin-bottom:14px;
+  box-shadow:0 8px 28px rgba(0,0,0,0.45);
+}
+.education h2{color:var(--accent)}          /* education heading uses accent */
+.edu-card h3{margin:0;color:var(--accent)}  /* school headings use accent (not plain white) */
+.edu-card p{color:var(--muted);margin-top:10px}
+
+/* responsive */
+@media (max-width:1000px){
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .tile{min-height:200px;max-height:200px}
+  .tile.expanded{min-height:300px}
+}
+@media (max-width:560px){
+  .tiles{grid-template-columns:repeat(1,1fr)}
+  .tile{min-height:180px;max-height:180px}
+}
+
+/* reveal (fade + slide up) */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* footer */
+.site-footer{margin-top:18px;color:var(--muted);text-align:center}
+.site-footer a{color:var(--accent);text-decoration:none}
+.site-footer i{color:var(--accent);margin-right:8px}
