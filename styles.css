@@ -26,6 +26,8 @@ body{
 .main-nav{display:flex;gap:10px}
 .nav-btn{background:transparent;border:1px solid transparent;color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer}
 .nav-btn:hover{color:var(--accent);transform:translateY(-3px)}
+/* show active tile state on nav */
+.nav-btn[aria-expanded="true"]{color:#e6eef6;border-color:rgba(110,198,255,0.25);box-shadow:0 0 0 3px rgba(110,198,255,0.08)}
 
 /* container/hero */
 .container{max-width:1200px;margin:0 auto}
@@ -67,8 +69,11 @@ h1{margin:0 0 6px 0;font-size:34px}
 
 /* header & body inside tile */
 .tile-head{font-weight:800;font-size:20px;color:#e6eef6}
-.tile-body{color:var(--muted);font-weight:400;display:none;line-height:1.5;opacity:0;transform:translateY(8px);transition:opacity 320ms ease, transform 320ms ease}
+.tile-body{color:var(--muted);font-weight:400;display:none;line-height:1.6;opacity:0;transform:translateY(8px);transition:opacity 320ms ease, transform 320ms ease}
 .tile-body h3{margin:0 0 8px 0;color:var(--accent)}
+/* better lists inside tile bodies */
+.tile-body ul{margin:8px 0 0 18px;padding:0}
+.tile-body li{margin:6px 0}
 
 /* When expanded: allow growth, reveal body, hide visual & short head */
 .tile.expanded{
@@ -93,8 +98,8 @@ h1{margin:0 0 6px 0;font-size:34px}
 .tile.expanded .tile-icon{ transform: scale(1.08); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
 
 /* skill levels */
-.skill-line{margin:8px 0;display:flex;align-items:center;gap:12px}
-.level{padding:4px 8px;border-radius:8px;font-weight:700;font-size:12px}
+.skill-line{margin:8px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.level{padding:4px 8px;border-radius:8px;font-weight:700;font-size:12px;white-space:nowrap}
 .level.expert{background:rgba(110,198,255,0.12);color:var(--accent)}
 .level.advanced{background:rgba(34,197,94,0.10);color:#7ee3b1}
 .level.intermediate{background:rgba(255,195,0,0.08);color:#ffd66a}
@@ -106,6 +111,8 @@ h1{margin:0 0 6px 0;font-size:34px}
 .cert-text{color:#e6eef6;text-decoration:none;font-weight:700}
 
 /* experience & projects */
+.experience{margin-top:8px}
+.projects{margin-top:8px}
 .exp-card, .proj-card{
   background:var(--glass);
   border-radius:12px;
@@ -114,9 +121,16 @@ h1{margin:0 0 6px 0;font-size:34px}
   margin-bottom:14px;
   box-shadow:0 8px 28px rgba(0,0,0,0.45);
 }
-.exp-card h3, .proj-card h3{margin:0;color:var(--accent)}
+.exp-card h3, .proj-card h3{margin:0 0 6px 0;color:var(--accent)}
 .exp-dates{color:var(--muted);margin:6px 0}
-.env{color:var(--muted);font-size:13px}
+.env{color:var(--muted);font-size:13px;margin-top:8px}
+/* lists inside cards */
+.exp-card ul, .proj-card ul{margin:8px 0 0 18px;padding:0}
+.exp-card li, .proj-card li{margin:6px 0}
+/* remove last gap in sections */
+.experience .exp-card:last-child,
+.projects .proj-card:last-child,
+.education .edu-card:last-child{margin-bottom:0}
 
 /* Education cards */
 .education{margin-top:24px}
@@ -140,7 +154,7 @@ h1{margin:0 0 6px 0;font-size:34px}
 }
 @media (max-width:560px){
   .tiles{grid-template-columns:repeat(1,1fr)}
-  .tile{min-height:180px;max-height:180px}
+  .tile{min-height:170px;max-height:170px} /* slightly tighter for long content */
 }
 
 /* reveal (fade + slide up) */
